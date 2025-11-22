@@ -1,0 +1,128 @@
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold mb-3">Frequently Asked Questions</h1>
+    <p class="lead text-muted">Find answers to common questions about Notes</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I create an account?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>You can create an account in two ways: using your email and password, or by signing in with Google. Click on "Sign Up" in the navigation bar and choose your preferred method.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is Notes free to use?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Notes is completely free to use. You can create unlimited notes and access them from anywhere.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I search for a note?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Once you're logged in, go to your dashboard and use the search bar at the top. You can search by note title or content. The search will show matching results in real-time.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I access my notes offline?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Currently, Notes requires an internet connection to access your notes as they are stored in the cloud. However, we're working on offline support for future updates.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I delete a note?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>To delete a note, open the note you want to delete and click the delete button. You'll be asked to confirm before the note is permanently removed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is my data secure?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, your data is secure. We use authentication to protect your account, and all data is stored securely in our database. We never share your personal information or notes with third parties.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I change my password?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>If you signed up with email and password, you can change your password from your account settings. If you signed in with Google, your password is managed through your Google account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What happens if I forget my password?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>If you forget your password, you can use the "Forgot Password" link on the login page. We'll send you instructions to reset your password via email.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I enable dark mode?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Click the theme toggle button (🌙/☀️) in the top right corner of the navigation bar to switch between light and dark mode. Your preference will be saved for future visits.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is there a limit to how many notes I can create?</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>No, there's no limit! You can create as many notes as you need. All your notes are stored securely and accessible whenever you need them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleFaq(element) {
+  const faqItem = element.parentElement;
+  const isActive = faqItem.classList.contains('active');
+
+  // Close all FAQ items
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+  });
+
+  // Open clicked item if it wasn't active
+  if (!isActive) {
+    faqItem.classList.add('active');
+  }
+}
+</script>
+

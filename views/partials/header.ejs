@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
+      <h3 class="fw-bold mb-0" style="color: var(--accent-color);">📝 Notes</h3>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2">Home</a></li>
+      <li><a href="/features" class="nav-link px-2">Features</a></li>
+      <li><a href="/faqs" class="nav-link px-2">FAQs</a></li>
+      <li><a href="/about" class="nav-link px-2">About</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end d-flex align-items-center gap-2">
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span>🌙</span>
+      </button>
+      <% if (typeof user === 'undefined' || !user) { %>
+        <a href="/auth/choose" class="btn btn-outline-primary me-2">Sign Up</a>
+        <a href="/auth/choose?action=login" class="btn btn-primary">Sign In</a>
+      <% } else { %>
+        <a href="/dashboard" class="btn btn-outline-primary me-2">Dashboard</a>
+        <a href="/logout" class="btn btn-primary">Logout</a>
+      <% } %>
+    </div>
+  </header>
+</div>
+<script src="/js/theme.js"></script>

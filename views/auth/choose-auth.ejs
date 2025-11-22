@@ -1,0 +1,31 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2 class="text-center mb-4"><%= action === 'login' ? 'Sign In' : 'Sign Up' %></h2>
+    <p class="text-center text-muted mb-4">Choose your preferred authentication method</p>
+
+    <div class="auth-choice-grid">
+      <a href="<%= action === 'login' ? '/login' : '/register' %>" class="auth-choice-btn">
+        <div class="auth-choice-icon">📧</div>
+        <div class="fw-bold">Email & Password</div>
+        <small class="text-muted">Use your email</small>
+      </a>
+
+      <% if (typeof hasGoogleAuth !== 'undefined' && hasGoogleAuth) { %>
+      <a href="/auth/google" class="auth-choice-btn">
+        <div class="auth-choice-icon">🔵</div>
+        <div class="fw-bold">Google</div>
+        <small class="text-muted">Quick sign in</small>
+      </a>
+      <% } %>
+    </div>
+
+    <div class="text-center mt-4">
+      <% if (action === 'login') { %>
+        <p class="text-muted">Don't have an account? <a href="/auth/choose" style="color: var(--accent-color);">Sign up</a></p>
+      <% } else { %>
+        <p class="text-muted">Already have an account? <a href="/auth/choose?action=login" style="color: var(--accent-color);">Sign in</a></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
