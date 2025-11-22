@@ -69,10 +69,10 @@ docker run -d \
 #### Step 4: Configure Environment Variables
 
 1. Copy the example environment file:
+
    ```bash
    cp .env.example .env
    ```
-
 2. Edit `.env` file with your configuration:
 
    ```env
@@ -128,10 +128,10 @@ cd Notes-NodeJs-CRUD-MongoDB-main
 #### Step 2: Configure Environment Variables
 
 1. Copy the example environment file:
+
    ```bash
    cp .env.example .env
    ```
-
 2. Edit `.env` file:
 
    ```env
@@ -156,6 +156,7 @@ cd Notes-NodeJs-CRUD-MongoDB-main
 #### Step 3: Build and Run with Docker Compose
 
 **Production Mode:**
+
 ```bash
 # Build and start all services
 docker-compose up -d
@@ -171,6 +172,7 @@ docker-compose down -v
 ```
 
 **Development Mode (with hot-reload):**
+
 ```bash
 # Start development environment
 docker-compose -f docker-compose.dev.yml up
@@ -190,6 +192,7 @@ The application will be available at `http://localhost:59080`
 #### Docker Commands Reference
 
 **Production:**
+
 ```bash
 # Start services in background
 docker-compose up -d
@@ -218,6 +221,7 @@ docker-compose exec app sh
 ```
 
 **Development:**
+
 ```bash
 # Start development environment
 docker-compose -f docker-compose.dev.yml up
@@ -266,30 +270,33 @@ Notes-NodeJs-CRUD-MongoDB-main/
 ### MongoDB Connection Strings
 
 **Local MongoDB (No Authentication):**
+
 ```
 mongodb://localhost:27017/notes
 ```
 
 **Local MongoDB (With Authentication):**
+
 ```
 mongodb://username:password@localhost:27017/notes?authSource=admin
 ```
 
 **Docker MongoDB (From docker-compose):**
+
 ```
 mongodb://admin:password123@mongodb:27017/notes?authSource=admin
 ```
 
 ### Environment Variables
 
-| Variable | Description | Required | Default |
-|----------|-------------|----------|---------|
-| `MONGODB_URI` | MongoDB connection string | Yes | - |
-| `GOOGLE_CLIENT_ID` | Google OAuth Client ID | No | - |
-| `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | No | - |
-| `GOOGLE_CALLBACK_URL` | OAuth callback URL | No | `http://localhost:59080/google/callback` |
-| `PORT` | Server port | No | `59080` |
-| `NODE_ENV` | Environment mode | No | `development` |
+| Variable               | Description                | Required | Default                                  |
+| ---------------------- | -------------------------- | -------- | ---------------------------------------- |
+| `MONGODB_URI`          | MongoDB connection string  | Yes      | -                                        |
+| `GOOGLE_CLIENT_ID`     | Google OAuth Client ID     | No       | -                                        |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret | No       | -                                        |
+| `GOOGLE_CALLBACK_URL`  | OAuth callback URL         | No       | `http://localhost:59080/google/callback` |
+| `PORT`                 | Server port                | No       | `59080`                                  |
+| `NODE_ENV`             | Environment mode           | No       | `development`                            |
 
 ## 🐛 Troubleshooting
 
@@ -298,6 +305,7 @@ mongodb://admin:password123@mongodb:27017/notes?authSource=admin
 **Problem**: Cannot connect to MongoDB
 
 **Solutions**:
+
 1. Verify MongoDB is running:
    ```bash
    # Check MongoDB status
@@ -312,6 +320,7 @@ mongodb://admin:password123@mongodb:27017/notes?authSource=admin
 **Problem**: Google authentication fails
 
 **Solutions**:
+
 1. Verify credentials in `.env` file
 2. Check callback URL matches Google Console configuration
 3. Ensure Google+ API is enabled in Google Cloud Console
@@ -322,6 +331,7 @@ mongodb://admin:password123@mongodb:27017/notes?authSource=admin
 **Problem**: Port 59080 is already in use
 
 **Solutions**:
+
 1. Change `PORT` in `.env` file
 2. Kill process using port 59080:
    ```bash
@@ -338,6 +348,7 @@ mongodb://admin:password123@mongodb:27017/notes?authSource=admin
 **Problem**: Docker containers won't start
 
 **Solutions**:
+
 1. Check Docker is running: `docker ps`
 2. View detailed logs: `docker-compose logs`
 3. Rebuild containers: `docker-compose up -d --build`
@@ -354,13 +365,13 @@ Currently, no automated tests are configured. To test manually:
 
 ## 📝 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Home page |
-| GET | `/auth/google` | Initiate Google OAuth |
-| GET | `/google/callback` | OAuth callback |
-| GET | `/dashboard` | User dashboard |
-| GET | `/logout` | Logout user |
+| Method | Endpoint           | Description           |
+| ------ | ------------------ | --------------------- |
+| GET    | `/`                | Home page             |
+| GET    | `/auth/google`     | Initiate Google OAuth |
+| GET    | `/google/callback` | OAuth callback        |
+| GET    | `/dashboard`       | User dashboard        |
+| GET    | `/logout`          | Logout user           |
 
 ## 🔒 Security Considerations
 
@@ -417,15 +428,12 @@ docker run -d \
 
 ## 📄 License
 
-This project is licensed under the ISC License.
+This project is licensed under the ISC License
 
-## 👨‍💻 Author
-
-Built with ❤️ by the development team
-
-## 📞 Support
+## Support
 
 For issues and questions:
+
 - Open an issue on GitHub
 - Check the troubleshooting section above
 - Review MongoDB and Node.js documentation

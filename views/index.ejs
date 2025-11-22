@@ -1,49 +1,66 @@
-<div class="container-fluid container-fluid-custom py-md-5 mb-5">
-    <main class="home">
-        <div class="row py-md-5 text-center justify-content-center">
-            <div class="col-md-12 col-lg-8 mb-6 mb-md-0">
-                <h1 class="display-2 fw-bold mb-4 position-relative home-title">
-                    Write your thoughts down as they come to you.
-                </h1>
-                <p class="fs-4 mb-4 text-muted">
-                    Notes is a beautiful, simple-to-use free note-taking app. Organize your ideas, thoughts, and
-                    reminders all in one place.
-                </p>
-                <div class="d-flex gap-3 justify-content-center flex-wrap">
-                    <a href="/auth/choose" class="btn btn-primary btn-lg">Get Started - It's FREE!</a>
-                    <a href="/features" class="btn btn-outline-primary btn-lg">Learn More</a>
+<div class="container-fluid container-fluid-custom">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1 class="display-3 fw-bold mb-4 home-title">
+                        Write your thoughts down as they come to you.
+                    </h1>
+                    <p class="lead fs-4 mb-5 text-muted px-3">
+                        Notes is a beautiful, simple-to-use free note-taking app. Organize your ideas, thoughts, and
+                        reminders all in one place.
+                    </p>
+                    <div class="d-flex justify-content-center mb-5">
+                        <% if (typeof user==='undefined' || !user) { %>
+                            <a href="/auth/choose" class="btn btn-primary btn-lg px-5">Join & Create a Note</a>
+                            <% } else { %>
+                                <a href="/dashboard" class="btn btn-primary btn-lg px-5">Go to Dashboard</a>
+                                <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="row mt-5 pt-5">
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <div class="card-body p-4">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
-                        <h4>Easy to Use</h4>
-                        <p class="text-muted">Intuitive interface that makes note-taking effortless and enjoyable.</p>
+        <!-- Features Preview Section -->
+        <section class="features-grid py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Why Choose Notes?</h2>
+                    <p class="lead text-muted">Everything you need to stay organized</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1;">📝</div>
+                                <h4 class="fw-bold mb-3">Easy to Use</h4>
+                                <p class="text-muted mb-0">Intuitive interface that makes note-taking effortless and
+                                    enjoyable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1;">🔒</div>
+                                <h4 class="fw-bold mb-3">Secure & Private</h4>
+                                <p class="text-muted mb-0">Your notes are protected with secure authentication and
+                                    encryption.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1;">☁️</div>
+                                <h4 class="fw-bold mb-3">Cloud Sync</h4>
+                                <p class="text-muted mb-0">Access your notes from anywhere, on any device, anytime.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <div class="card-body p-4">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
-                        <h4>Secure & Private</h4>
-                        <p class="text-muted">Your notes are protected with secure authentication and encryption.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <div class="card-body p-4">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">☁️</div>
-                        <h4>Cloud Sync</h4>
-                        <p class="text-muted">Access your notes from anywhere, on any device, anytime.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 </div>
